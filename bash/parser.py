@@ -89,7 +89,7 @@ class Parser:
         func_store.insert_function("calendar", lambda args : yf.Ticker(args.ticker).calendar)
 
     def _set_history_parser(self, func_store):
-        self._set_subparser("history", "history stuff")
+        self._set_subparser("history", "history")
     
     def _set_subparser(self, name, help_text):
         parser = self.subparsers.add_parser(name, help=help_text)

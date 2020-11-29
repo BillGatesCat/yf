@@ -71,7 +71,7 @@ class Parser:
         func_store.insert_function("balance", lambda args : yf.Ticker(args.ticker).quarterly_balance_sheet if args.quarterly else yf.Ticker(args.ticker).balance_sheet)
 
     def _set_cashflow_parser(self, func_store):
-        parser = self._set_subparser("cashflow", "calendar stuff")
+        parser = self._set_subparser("cashflow", "calendaasdfr")
         parser.add_argument("--quarterly", "-q", nargs='?')
 
         func_store.insert_function("cashflow", lambda args : yf.Ticker(args.ticker).quarterly_cashflow if args.quarterly else yf.Ticker(args.ticker).cashflow)

@@ -28,12 +28,12 @@ class Parser:
         self.subparsers = self.master_parser.add_subparsers(dest='subparser_name', help='sub-command help')
 
         self._set_actions_parser(func_store)
-        self._set_balance_parser(func_store)
+        #self._set_balance_parser(func_store)
         self._set_calendar_parser(func_store)
-        self._set_cashflow_parser(func_store)
+        #self._set_cashflow_parser(func_store)
         self._set_dividends_parser(func_store)
-        self._set_earnings_parser(func_store)
-        self._set_financials_parser(func_store)
+        #self._set_earnings_parser(func_store)
+        #self._set_financials_parser(func_store) new yfinance update being rolled out to fix issue https://github.com/ranaroussi/yfinance/pull/480
         self._set_history_parser(func_store)
         self._set_holders_parser(func_store)
         self._set_sustainability_parser(func_store)
@@ -42,12 +42,12 @@ class Parser:
         return self.master_parser.parse_args()
 
     def _set_actions_parser(self, func_store):
-        self._set_subparser("actions", "holders stuff")
-        func_store.insert_function("actions", lambda args : yf.Ticker(args.ticker).actions)
+        self._set_subparser("actions", "Prints a csv file with the schema (Date, Dividends, Stock Splits)")
+        func_store.insert_function("actions", lambda args : yf.Ticker(args.ticker).actions.to_csv(header=True))
 
     def _set_dividends_parser(self, func_store):
-        self._set_subparser("dividends", "holders stuff")
-        func_store.insert_function("dividends", lambda args : yf.Ticker(args.ticker).dividends)
+        self._set_subparser("dividends", "Prints a csv file with the schema (Date, Dividends)")
+        func_store.insert_function("dividends", lambda args : yf.Ticker(args.ticker).dividends.to_csv(header=True))
 
     def _set_financials_parser(self, func_store):
         parser = self._set_subparser("financials", "financial stuff")
@@ -77,7 +77,9 @@ class Parser:
         func_store.insert_function("cashflow", lambda args : yf.Ticker(args.ticker).quarterly_cashflow if args.quarterly else yf.Ticker(args.ticker).cashflow)
 
     def _set_earnings_parser(self, func_store):
-        self._set_subparser("earnings", "earnings stuff")
+        parser = self._set_subparser("earnings", "earnings stuff")
+        parser.add_argument("--quarterly", "-q", default=False, action='store_true', help="Flag to do something")
+
         func_store.insert_function("earnings", lambda args : yf.Ticker(args.ticker).quarterly_earnings if args.quarterly else yf.Ticker(args.ticker).earnings)
 
     def _set_sustainability_parser(self, func_store):
@@ -86,11 +88,26 @@ class Parser:
 
     def _set_calendar_parser(self, func_store):
         self._set_subparser("calendar", "calendar stuff")
-        func_store.insert_function("calendar", lambda args : yf.Ticker(args.ticker).calendar)
+        func_store.insert_function("calendar", lambda args : yf.Ticker(args.ticker).calendar.to_csv(header=True))
 
     def _set_history_parser(self, func_store):
-        self._set_subparser("history", "history")
-    
+        parser = self._set_subparser("history", "history")
+        parser.add_argument("--period", "-p", default="1mo", help="Flag to do something")
+        parser.add_argument("--interval", "-i", default="1d", help="Flag to do something")
+        parser.add_argument("--start", "-s", default=None, help="Flag to do something")
+        parser.add_argument("--end", "-e", default=None, help="Flag to do something")
+        parser.add_argument("--prepost", "-pr", default=False, action='store_true', help="Flag to do something")
+        parser.add_argument("--actions", "-a", default=True, action='store_true', help="Flag to do something")
+        parser.add_argument("--autoadjust", "-ad", default=True, action='store_true', help="Flag to do something")
+        parser.add_argument("--backadjust", "-bd", default=True, action='store_true', help="Flag to do something")
+        parser.add_argument("--proxy", "-px", default=None, help="Flag to do something")
+        parser.add_argument("--rounding", "-r", default=True, action='store_true', help="Flag to do something")
+        parser.add_argument("--timezone", "-tz", default=None, help="Flag to do something")
+        
+        func_store.insert_function("history", lambda args: yf.Ticker(args.ticker).history(period=args.period, interval=args.interval, 
+            start=args.start, end=args.end, prepost=args.prepost, actions=args.actions, auto_adjust=args.autoadjust, 
+            back_adjust=args.backadjust, proxy=args.proxy, rounding=args.rounding, tz=args.timezone).to_csv())
+  
     def _set_subparser(self, name, help_text):
         parser = self.subparsers.add_parser(name, help=help_text)
         parser.add_argument("-ticker", "-t", help="The ticker symbol")

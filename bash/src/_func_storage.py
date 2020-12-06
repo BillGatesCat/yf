@@ -7,3 +7,4 @@ class _FuncStorage:
 
     def get_all_functions(self):
         return self._function_map
+        

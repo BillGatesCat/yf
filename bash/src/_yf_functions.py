@@ -54,7 +54,7 @@ class _YahooFunctions:
 
     @staticmethod
     def history(args):
-        return yf.Ticker(args.ticker).history(period=args.period, interval=args.interval, 
-            start=args.start, end=args.end, prepost=args.prepost, actions=args.actions, 
-            auto_adjust=args.autoadjust, back_adjust=args.backadjust, proxy=args.proxy, 
+        return yf.Ticker(args.ticker).history(period=args.period, interval=args.interval,
+            start=args.start, end=args.end, prepost=args.prepost, actions=args.actions,
+            auto_adjust=args.autoadjust, back_adjust=args.backadjust, proxy=args.proxy,
             rounding=args.rounding, tz=None).to_csv(header=True)

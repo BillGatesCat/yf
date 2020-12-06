@@ -1,1 +1,3 @@
-disable=C0114, # missing-module-docstring
+[MASTER]
+disable=
+    C0114, # missing-module-docstring

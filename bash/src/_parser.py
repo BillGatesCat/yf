@@ -106,9 +106,9 @@ class _Parser:
         parser.add_argument("--rounding", "-r", default=False, action='store_true',
             help="round values to 2 decimal places? false by default")
         #parser.add_argument("--timezone", "-tz", default=None, help="Flag to do something")
-        
+
         func_store.insert_function("history", yf.history)
-  
+
     def _set_subparser(self, name, help_text):
         parser = self.subparsers.add_parser(name, help=help_text)
         parser.add_argument("-ticker", "-t", help="ticker symbol")

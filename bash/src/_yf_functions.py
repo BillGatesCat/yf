@@ -15,7 +15,7 @@ class _YahooFunctions:
             return yf.Ticker(args.ticker).quarterly_financials
 
         return yf.Ticker(args.ticker).financials
-    
+
     @staticmethod
     def holders(args):
         if args.major:
@@ -27,7 +27,7 @@ class _YahooFunctions:
     def balance(args):
         if args.quarterly:
             return yf.Ticker(args.ticker).quarterly_balance_sheet
-        
+
         return yf.Ticker(args.ticker).balance_sheet
 
     @staticmethod
@@ -36,7 +36,7 @@ class _YahooFunctions:
             return yf.Ticker(args.ticker).quarterly_cashflow
 
         return yf.Ticker(args.ticker).cashflow
-    
+
     @staticmethod
     def earnings(args):
         if args.quarterly:

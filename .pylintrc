@@ -3,3 +3,5 @@ disable=
     C0114, # missing-module-docstring
     C0116, # missing-module-docstring
     R0903, # too few public methods
+[FORMAT]
+max-line-length=120

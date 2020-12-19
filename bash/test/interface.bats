@@ -6,3 +6,6 @@
   FILE=dist/main
   [ -f "$FILE" ]
 }
+
+
+

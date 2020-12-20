@@ -5,5 +5,5 @@ class _FuncExecuter:
 
         for key, func in functions.items():
             if args.subparser_name == key:
-                print(func(args))
+                print(func(args), end="")
                 break

@@ -26,3 +26,17 @@ yf=../../dist/main
 
   [ "$headers" = "$result" ]
 }
+
+@test "Proper history headers" {
+  headers=$(./$yf history -t MSFT | head -n1)
+  result="Date,Open,High,Low,Close,Volume,Dividends,Stock Splits"
+  
+  [ "$headers" = "$result" ]
+}
+
+@test "Proper holders headers" {
+  headers=$(./$yf holders -t MSFT | head -n1)
+  result=",Holder,Shares,Date Reported,% Out,Value"
+
+  [ "$headers" = "$result" ]
+}

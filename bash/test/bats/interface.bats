@@ -40,3 +40,14 @@ yf=../../dist/main
 
   [ "$headers" = "$result" ]
 }
+
+@test "Proper sustainability headers" {
+  headers=$(./$yf sustain -t MSFT | head -n1)
+
+  isProperHeaders=0
+  if [[ $headers =~ ^[0-9]{4}-[0-9]{1,2}(,Value) ]]
+    then isProperHeaders=1
+  fi
+
+  [ "$isProperHeaders" = "1" ]
+}

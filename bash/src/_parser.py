@@ -72,9 +72,9 @@ class _Parser:
         func_store.insert_function("earnings", yf.earnings)
 
     def _set_sustainability_parser(self, func_store):
-        self._set_subparser("sustainability", """prints csv file showing environmental, social,
+        self._set_subparser("sustain", """prints csv file showing environmental, social,
             and governance issues which may be relevant to the specified company""")
-        func_store.insert_function("sustainability", yf.sustainability)
+        func_store.insert_function("sustain", yf.sustainability)
 
     def _set_calendar_parser(self, func_store):
         self._set_subparser("calendar",

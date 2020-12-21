@@ -1,7 +1,8 @@
 echo "Compiling python code..."
 
-cd ..
-./install.sh
+cd $(dirname "$0")
 
-cd test/bats
+./../install.sh
+
+cd bats
 bats interface.bats

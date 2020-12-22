@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd $(dirname "$0")
+PREFIX="$1"
 
 sudo apt install pip
 pip install pyinstaller
@@ -11,9 +12,10 @@ sudo ./bats/install.sh /usr/local
 
 pyinstaller src/main.py --onefile -n yf
 
-
-mkdir libexec
-mkdir bin
+mkdir libexec bin
 
 cp dist/yf libexec
-ln -s ../libexec/yf bin 
+ln -s ../libexec/yf bin
+
+sudo cp -R bin/* "$PREFIX"/bin
+sudo cp -R libexec/* "$PREFIX"/libexec

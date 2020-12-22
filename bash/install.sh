@@ -11,3 +11,9 @@ sudo ./bats/install.sh /usr/local
 
 pyinstaller src/main.py --onefile -n yf
 
+
+mkdir libexec
+mkdir bin
+
+cp dist/yf libexec
+ln -s ../libexec/yf bin 

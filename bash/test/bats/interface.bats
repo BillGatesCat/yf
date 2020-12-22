@@ -1,9 +1,8 @@
 #!/usr/bin/env bats
 
-yf=../../dist/main
+yf=../../dist/yf
 @test "Compiled source" {
-  FILE=../../dist/main
-  [ -f "$FILE" ]
+  [ -f "$yf" ]
 }
 
 @test "Proper action headers" {  

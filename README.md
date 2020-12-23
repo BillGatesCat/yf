@@ -4,9 +4,9 @@
 **yf** is a bash tool that allows for quick and easy access to Yahoo! Finance market data through the terminal.
 
 ### Requirements for installation
-- (Python)[1] >= 3.4+
-- (Pyinstaller)[2] >= 4.0+
-- (Yfinance)[3] == 0.1.55
+- [Python][1] >= 3.4+
+- [Pyinstaller][2] >= 4.0+
+- [Yfinance][3] == 0.1.55
 
 [1]: https://www.python.org/
 [2]: https://pypi.org/project/pyinstaller/

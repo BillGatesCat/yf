@@ -11,7 +11,7 @@ The following command outputs the Microsoft stock data from the past month on a 
 To run same command for the uncompiled Python source code, run `python bash/src/main.py history -t MSFT`
 
 ### Requirements and tested platforms
-**Ubuntu Linux**
+***Ubuntu Linux***
 - [Python][1] >= 3.4+
 - [Pyinstaller][2] >= 4.0+
 - [Yfinance][3] == 0.1.55

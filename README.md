@@ -3,10 +3,11 @@
 **yf** is a bash tool that allows for quick and easy access to Yahoo! Finance market data through the terminal.
 
 ## Quick Start
+    yf history -t MSFT
 The history subcommand outputs historical prices, volume, dividends, and stock splits.
 The following command outputs the Microsoft stock data from the past month on a daily interval.
 (Run `yf history --help` for an explanation on the subcommand.)
-    yf history -t MSFT
+
 
 CSV output on Dec. 23, 2020:
     Date,Open,High,Low,Close,Volume,Dividends,Stock Splits

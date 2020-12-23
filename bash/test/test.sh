@@ -2,7 +2,9 @@ echo "Compiling python code..."
 
 cd $(dirname "$0")
 
-./../install.sh
+pyinstaller ../src/main.py --onefile -n yf
 
-cd bats
-bats interface.bats
+bats bats/interface.bats
+
+echo "Cleaning up artifacts..."
+rm -rf build dist yf.spec

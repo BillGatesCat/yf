@@ -3,10 +3,11 @@ from _yf_functions import _YahooFunctions as yf
 
 class _Parser:
     def __init__(self, func_store):
-        self.master_parser = argparse.ArgumentParser(description='fuck', add_help=True, usage="asdfasdf", epilog="asdfsdaf")
-
-        self.subparsers = self.master_parser.add_subparsers(title='subcommands', dest='subparser_name',
-            help='sub-command help')
+        self.master_parser = argparse.ArgumentParser()
+        self.subparsers = self.master_parser.add_subparsers(title='subcommands', dest='subparser_name')
+        #The commented subparsers are dependent on the following fixes to 
+        #yfinance package https://github.com/ranaroussi/yfinance/pull/480
+        #Waiting for fixes to be released
         self._set_actions_parser(func_store)
         #self._set_balance_parser(func_store)
         self._set_calendar_parser(func_store)
@@ -14,7 +15,6 @@ class _Parser:
         self._set_dividends_parser(func_store)
         #self._set_earnings_parser(func_store)
         #self._set_financials_parser(func_store)
-        #https://github.com/ranaroussi/yfinance/pull/480
         self._set_history_parser(func_store)
         self._set_holders_parser(func_store)
         self._set_sustainability_parser(func_store)
@@ -32,10 +32,8 @@ class _Parser:
         func_store.insert_function("dividends", yf.dividends)
 
     def _set_financials_parser(self, func_store):
-        parser = self._set_subparser("financials", "financial stuff")
-        parser.add_argument("--quarterly", "-q", default=False, action='store_true',
-            help="Flag to do something")
-
+        parser = self._set_subparser("financials", "")
+        parser.add_argument("--quarterly", "-q", default=False, action='store_true', help="")
         func_store.insert_function("financials", yf.financials)
 
     def _set_holders_parser(self, func_store):
@@ -52,23 +50,18 @@ class _Parser:
         func_store.insert_function("holders", yf.holders)
 
     def _set_balance_parser(self, func_store):
-        parser = self._set_subparser("balance", "balance stuff")
-        parser.add_argument("--quarterly", action="store_true", default=False,
-            help="Flag to do something")
-
+        parser = self._set_subparser("balance", "")
+        parser.add_argument("--quarterly", action="store_true", default=False, help="")
         func_store.insert_function("balance", yf.balance)
 
     def _set_cashflow_parser(self, func_store):
-        parser = self._set_subparser("cashflow", "cashflow stuff")
+        parser = self._set_subparser("cashflow", "")
         parser.add_argument("--quarterly", "-q", nargs='?')
-
         func_store.insert_function("cashflow", yf.cashflow)
 
     def _set_earnings_parser(self, func_store):
         parser = self._set_subparser("earnings", "earnings stuff")
-        parser.add_argument("--quarterly", "-q", default=False, action='store_true',
-            help="Flag to do something")
-
+        parser.add_argument("--quarterly", "-q", default=False, action='store_true', help="")
         func_store.insert_function("earnings", yf.earnings)
 
     def _set_sustainability_parser(self, func_store):

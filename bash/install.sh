@@ -4,12 +4,11 @@ cd $(dirname "$0")
 
 ./clean.sh
 
-sudo apt install pip
-pip install pyinstaller
-pip install yfinance
+apt install pip
+pip install "pyinstaller>=4.0,<5.0"
+pip install yfinance==0.1.55
 git clone https://github.com/sstephenson/bats.git
-
-sudo ./bats/install.sh /usr/local
+./bats/install.sh /usr/local
 
 pyinstaller src/main.py --onefile -n yf
 
@@ -18,5 +17,5 @@ mkdir libexec bin
 cp dist/yf libexec
 ln -s ../libexec/yf bin
 
-sudo cp -R ./bin/* /usr/local/bin
-sudo cp -R ./libexec/* /usr/local/libexec
+cp -R ./bin/* /usr/local/bin
+cp -R ./libexec/* /usr/local/libexec

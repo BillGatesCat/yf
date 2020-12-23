@@ -3,10 +3,10 @@ from _yf_functions import _YahooFunctions as yf
 
 class _Parser:
     def __init__(self, func_store):
-        self.master_parser = argparse.ArgumentParser()
-        self.subparsers = self.master_parser.add_subparsers(dest='subparser_name',
-            help='sub-command help')
+        self.master_parser = argparse.ArgumentParser(description='fuck', add_help=True, usage="asdfasdf", epilog="asdfsdaf")
 
+        self.subparsers = self.master_parser.add_subparsers(title='subcommands', dest='subparser_name',
+            help='sub-command help')
         self._set_actions_parser(func_store)
         #self._set_balance_parser(func_store)
         self._set_calendar_parser(func_store)

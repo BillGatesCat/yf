@@ -1,5 +1,4 @@
 # yf
 ## Yahoo! Finance market data downloader for Bash
 
-**yf** is a bash tool that allows for quick and easy access to Yahoo! Finance market data through the terminal by utilizing the 
-[`yfinance`](https://github.com/ranaroussi/yfinance) python library.
+**yf** is a bash tool that allows for quick and easy access to Yahoo! Finance market data through the terminal.

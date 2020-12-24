@@ -20,11 +20,14 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.8
-      # Runs a set of commands using the runners shell
-      - name: Run shell tests
+      - name: Run Installation
         run: |
           pip install "pyinstaller>=4.0,<5.0"
           pip install yfinance==0.1.55
+          ./bash/install.sh
+      # Runs a set of commands using the runners shell
+      - name: Run shell tests
+        run: |
           git clone https://github.com/sstephenson/bats.git
           sudo ./bats/install.sh /usr/local
 

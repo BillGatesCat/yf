@@ -23,7 +23,6 @@ Other subcommands in yf include: `actions`, `calendar`, `dividends`, `holders`, 
 [3]: https://github.com/ranaroussi/yfinance/
 
 ### Installation
-    sudo apt install pip
     pip install "pyinstaller>=4.0,<5.0"
     pip install yfinance==0.1.55
 
@@ -33,6 +32,11 @@ Other subcommands in yf include: `actions`, `calendar`, `dividends`, `holders`, 
     ./bash/uninstall.sh
 
 ### Run tests
+    #Install bats dependency
+    git clone https://github.com/sstephenson/bats.git
+    sudo ./bats/install.sh /usr/local
+
+    #Run tests
     ./bash/test/test.sh
 
 ## A note on pull requests

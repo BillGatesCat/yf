@@ -17,11 +17,12 @@ Other subcommands in yf include: `actions`, `calendar`, `dividends`, `holders`, 
 - [Python][1] >= 3.4+
 - [Pyinstaller][2] >= 4.0+
 - [Yfinance][3] == 0.1.55
-- Pip
+- [Pip][4]
 
 [1]: https://www.python.org/
 [2]: https://pypi.org/project/pyinstaller/
 [3]: https://github.com/ranaroussi/yfinance/
+[4]: https://pip.pypa.io/en/stable/reference/pip_install/
 
 ### Installation
     pip install "pyinstaller>=4.0,<5.0"

@@ -1,6 +1,6 @@
 # yf
 ### Yahoo! Finance market data downloader for Bash
-**yf** is a bash tool that allows for quick and easy access to Yahoo! Finance market data through the terminal.
+**yf** is a bash tool that allows for quick and easy access to Yahoo! Finance market data.
 
 ## Quick Start
     yf history -t MSFT
@@ -9,6 +9,8 @@ The following command outputs the Microsoft stock data from the past month on a 
 (Run `yf history --help` for an explanation on the subcommand.)
 
 To run same command for the uncompiled Python source code, run `python bash/src/main.py history -t MSFT`
+
+Other subcommands in yf include: `actions`, `calendar`, `dividends`, `holders`, `sustain`
 
 ### Requirements and tested platforms
 ***Ubuntu Linux***
@@ -33,4 +35,10 @@ To run same command for the uncompiled Python source code, run `python bash/src/
 ### Run tests
     ./bash/test/test.sh
 
-Please drop me a note if you have any feedback!
+## A note on pull requests
+Please do not set your pull requests to merge with `main`, instead merge them to `develop`.
+
+### P.S.
+Drop me a note if you have any feedback!
+
+![](https://i.kym-cdn.com/entries/icons/original/000/030/157/womanyellingcat.jpg)

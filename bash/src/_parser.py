@@ -5,7 +5,7 @@ class _Parser:
     def __init__(self, func_store):
         self.master_parser = argparse.ArgumentParser()
         self.subparsers = self.master_parser.add_subparsers(title='subcommands', dest='subparser_name')
-        #The commented subparsers are dependent on the following fixes to 
+        #The commented subparsers are dependent on the following fixes to
         #yfinance package https://github.com/ranaroussi/yfinance/pull/480
         #Waiting for fixes to be released
         self._set_actions_parser(func_store)

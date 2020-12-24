@@ -38,7 +38,7 @@ Other subcommands in yf include: `actions`, `calendar`, `dividends`, `holders`, 
 ## A note on pull requests
 Please do not set your pull requests to merge with `main`, instead merge them to `develop`.
 
-
-#### P.S.
+### P.S.
 Drop me a note if you have any feedback!
+
 ![](https://i.kym-cdn.com/entries/icons/original/000/030/157/womanyellingcat.jpg)

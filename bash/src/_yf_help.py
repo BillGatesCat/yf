@@ -1,15 +1,15 @@
-yf_usage_message = "usage: yf [SUBCOMMAND] ..."
+YF_USAGE_MESSAGE = "usage: yf [SUBCOMMAND] ..."
 
-yf_subcommand_message = """program:
+YF_SUBCOMMAND_MESSAGE = """program:
   SUBCOMMAND needs to be specified as one of the following: actions, calendar, dividends, history, holders, sustain
   Add -h after [SUBCOMMAND] for more details on usage. Ex. yf [SUBCOMMAND] -h"""
 
-yf_options_message = """optional arguments:
+YF_OPTIONS_MESSAGE = """optional arguments:
   -h, --help            show this help message and exit"""
 
 def print_yf_help():
-    print(yf_usage_message)
+    print(YF_USAGE_MESSAGE)
     print()
-    print(yf_subcommand_message)
+    print(YF_SUBCOMMAND_MESSAGE)
     print()
-    print(yf_options_message)
+    print(YF_OPTIONS_MESSAGE)

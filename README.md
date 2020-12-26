@@ -1,5 +1,7 @@
 # yf
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Build Actions Status](https://github.com/BillGatesCat/yf/workflows/build/badge.svg)](https://github.com/BillGatesCat/yf/actions)
+
 ### Yahoo! Finance market data downloader for Bash
 **yf** is a bash tool that allows for quick and easy access to Yahoo! Finance market data.
 

@@ -14,7 +14,7 @@ To run same command for the uncompiled Python source code, run `python bash/src/
 Other subcommands in yf include: `actions`, `calendar`, `dividends`, `holders`, `sustain`
 
 ### Requirements and tested platforms
-***Ubuntu Linux***
+***Ubuntu Linux And MacOS***
 - [Python][1] >= 3.4+
 - [Pyinstaller][2] >= 4.0+
 - [Yfinance][3] == 0.1.55

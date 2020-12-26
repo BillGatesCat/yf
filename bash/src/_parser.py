@@ -104,6 +104,6 @@ class _Parser:
 
     def _set_subparser(self, name, help_text):
         parser = self.subparsers.add_parser(name, help=help_text)
-        parser.add_argument("-ticker", "-t", help="ticker symbol")
+        parser.add_argument("--ticker", "-t", help="ticker symbol")
 
         return parser

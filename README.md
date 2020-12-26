@@ -1,4 +1,5 @@
 # yf
+![Build](https://github.com/BillGatesCat/yf/workflows/Build/badge.svg)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ### Yahoo! Finance market data downloader for Bash
 **yf** is a bash tool that allows for quick and easy access to Yahoo! Finance market data.
@@ -14,7 +15,7 @@ To run same command for the uncompiled Python source code, run `python bash/src/
 Other subcommands in yf include: `actions`, `calendar`, `dividends`, `holders`, `sustain`
 
 ### Requirements and tested platforms
-***Ubuntu Linux***
+***Ubuntu Linux And MacOS***
 - [Python][1] >= 3.4+
 - [Pyinstaller][2] >= 4.0+
 - [Yfinance][3] == 0.1.55

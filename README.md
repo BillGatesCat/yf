@@ -31,7 +31,7 @@ Other subcommands in yf include: `actions`, `calendar`, `dividends`, `holders`, 
     pip install "pyinstaller>=4.0,<5.0"
     pip install yfinance==0.1.55
 
-    sudo ./bash/install.sh
+    ./bash/install.sh
 
 ### Uninstall
     ./bash/uninstall.sh

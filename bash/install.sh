@@ -11,5 +11,5 @@ mkdir libexec bin
 cp dist/yf libexec
 ln -s ../libexec/yf bin
 
-cp -R ./bin/* /usr/local/bin
-cp -R ./libexec/* /usr/local/libexec
+sudo cp -R ./bin/* /usr/local/bin
+sudo cp -R ./libexec/* /usr/local/libexec
